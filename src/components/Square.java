@@ -92,10 +92,6 @@ public class Square implements Serializable{
 			Image i = Toolkit.getDefaultToolkit().getImage(piece.getImagePath());
 			
 			
-//			i = i.getScaledInstance((int)(SQUARE_SIZE*0.8)+1, (int)(SQUARE_SIZE*0.8)+1, Image.SCALE_SMOOTH);
-			
-			
-			
 			g2.drawImage(i, x+SQUARE_SIZE/2 - i.getWidth(null)/2,
 					y+SQUARE_SIZE/2 - i.getHeight(null)/2, null);
 			
@@ -110,8 +106,8 @@ public class Square implements Serializable{
 		}
 		
 		if(debug){
-			g2.setColor(Color.red);
-			g2.fillOval(x + SQUARE_SIZE/2 - 10, y+SQUARE_SIZE/2 - 10, 20, 20);
+			//g2.setColor(Color.red);
+			//g2.fillOval(x + SQUARE_SIZE/2 - 10, y+SQUARE_SIZE/2 - 10, 20, 20);
 		}
 	}
 

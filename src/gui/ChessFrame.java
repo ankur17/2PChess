@@ -42,8 +42,6 @@ public class ChessFrame extends JFrame {
 		setResizable(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		vp = new VictimPanel();
-		//vp.redraw();
-		
 		
 		add(vp, BorderLayout.EAST);
 		guiBoard.setSize(guiBoard.getPreferredSize());
@@ -64,7 +62,6 @@ public class ChessFrame extends JFrame {
 				game = new Game();
 				game.run();
 			}
-			
 		};
 		
 		saveGame 		= new AbstractAction("Save Game"){

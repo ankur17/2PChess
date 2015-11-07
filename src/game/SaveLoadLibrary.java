@@ -18,31 +18,18 @@ public class SaveLoadLibrary {
 
 	
 	public static void save(Game g) throws IOException{
-		File savedFile = new File(
-				//System.getProperty("user.home") + 
-				//File.separator + 
-				//"Chess_Saved_Games" + 
-				//File.separator + 
-				"savedGame.bla"
-				);
+		File savedFile = new File("savedgame.2pc");
 		savedFile.createNewFile();
 		
 		ObjectOutputStream oos = new ObjectOutputStream(
 				new FileOutputStream(savedFile));
 		
 		oos.writeObject(g);
-		
 		oos.close();
 	}
 	
 	public static Game load() throws FileNotFoundException, IOException, ClassNotFoundException{
-		File loadedFile = new File(
-				//System.getProperty("user.home") + 
-				//File.separator + 
-				//"Chess_Saved_Games" + 
-				//File.separator + 
-				"savedGame.bla"
-				);
+		File loadedFile = new File("savedgame.2pc");
 		if(!loadedFile.exists()){
 			JOptionPane.showMessageDialog(null, "No Saved Game Found.", "Load Error", 
 					JOptionPane.OK_OPTION);
@@ -60,7 +47,7 @@ public class SaveLoadLibrary {
 		g.setFrame(new ChessFrame(guiBoard));
 		g.getFrame().setVP(vp);
 		g.updateGameState();
-		
+
 		ois.close();
 		
 		return g;
