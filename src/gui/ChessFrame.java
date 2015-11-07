@@ -26,7 +26,7 @@ public class ChessFrame extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 773148790671349216L;
-	private Action newGame, saveGame, loadGame, abandonGame, undo;
+	private Action newGame, saveGame, loadGame, abandonGame, undo,about;
 	private VictimPanel vp;
 	private GraphicalBoard guiBoard;
 	
@@ -53,7 +53,7 @@ public class ChessFrame extends JFrame {
 		toolbar.setFloatable(false);
 		add(toolbar, BorderLayout.PAGE_START);
 		
-		newGame 		= new AbstractAction("New Game"){
+		newGame 		= new AbstractAction("New"){
 			private static final long serialVersionUID = 1L;
 				
 			@Override
@@ -64,7 +64,7 @@ public class ChessFrame extends JFrame {
 			}
 		};
 		
-		saveGame 		= new AbstractAction("Save Game"){
+		saveGame 		= new AbstractAction("Save"){
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -74,7 +74,7 @@ public class ChessFrame extends JFrame {
 			
 		};
 		
-		loadGame 		= new AbstractAction("Load Game"){
+		loadGame 		= new AbstractAction("Load"){
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -125,18 +125,35 @@ public class ChessFrame extends JFrame {
 			
 		};
 		
+		about 		= new AbstractAction("About"){
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "2 Player GUI Chess Game (JAVA Project)\nCreated by:"
+						+ "\n- Manish Singh Bisht"
+						+ "\n- Sahil Trivedi"
+						+ "\n- Love Varshney"
+						+ "\n- Ankur Harna", "About us", JOptionPane.INFORMATION_MESSAGE);
+			}
+			
+		};
+		
 				
 		newGame 	    .setEnabled(true);
 		saveGame 	    .setEnabled(true);
 		loadGame 	    .setEnabled(true);
 		abandonGame     .setEnabled(true);
 		undo     		.setEnabled(false);
+		about     		.setEnabled(true);
+		
 		
 		JButton newButton 	  = new JButton(newGame);
 		JButton saveButton 	  = new JButton(saveGame);
 		JButton loadButton 	  = new JButton(loadGame);
 		JButton abandonButton = new JButton(abandonGame);
 		JButton undoButton    = new JButton(undo);
+		JButton aboutButton    = new JButton(about);
 		
 		toolbar.add(newButton);
 		toolbar.add(saveButton);
@@ -145,6 +162,8 @@ public class ChessFrame extends JFrame {
 		toolbar.add(abandonButton);
 		toolbar.addSeparator();
 		toolbar.add(undoButton);
+		toolbar.addSeparator();
+		toolbar.add(aboutButton);
 		tools.add(toolbar);
 		add(tools, BorderLayout.NORTH);
 		add(constraint, BorderLayout.CENTER);
