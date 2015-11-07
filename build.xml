@@ -1,0 +1,26 @@
+<project default="all">
+    
+    <target name="all" depends="clean,compile,jar,run">
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+    <target name="jar" depends="compile">
+        <mkdir dir="dist/jar"/>
+        <jar destfile="dist/jar/2PChess.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="game.Launcher"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="dist/jar/2PChess.jar" fork="true"/>
+    </target>
+
+</project>
