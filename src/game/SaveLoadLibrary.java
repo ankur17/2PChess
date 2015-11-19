@@ -49,8 +49,6 @@ public class SaveLoadLibrary {
 		g.updateGameState();
 
 		ois.close();
-		
 		return g;
-		
 	}
 }

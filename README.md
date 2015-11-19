@@ -1,4 +1,4 @@
-# College Project (JAVA)
+# College Project (JAVA) [![Build Status](https://travis-ci.org/manish05/2PChess.svg)](https://travis-ci.org/manish05/2PChess)
 **======================================**
 
 Simple 2 Player GUI Chess Game

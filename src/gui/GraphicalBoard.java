@@ -13,9 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import checker.moveSystem.Move;
+
 import components.Board;
 import components.Square;
-import components.pieces.Pawn;
 
 public class GraphicalBoard  extends JPanel implements MouseListener, Serializable{
 

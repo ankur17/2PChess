@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.geom.Rectangle2D;
 import java.awt.Toolkit;
+import java.awt.geom.Rectangle2D;
 import java.io.Serializable;
 
 import components.pieces.Piece;
@@ -91,14 +91,13 @@ public class Square implements Serializable{
 		if(piece != null && piece.getImagePath() != ""){
 			Image i = Toolkit.getDefaultToolkit().getImage(piece.getImagePath());
 			
-			
 			g2.drawImage(i, x+SQUARE_SIZE/2 - i.getWidth(null)/2,
 					y+SQUARE_SIZE/2 - i.getHeight(null)/2, null);
 			
 			
 			g.drawImage(i, x+SQUARE_SIZE/2 - i.getWidth(null)/2,
 					y+SQUARE_SIZE/2 - i.getHeight(null)/2, null);
-		
+			
 		}
 		if(isHighlighted()){
 			g2.setColor(Color.yellow);
